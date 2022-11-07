@@ -14,31 +14,40 @@ type Props = AddressFormData & {
 const AddressForm = ({ street, city, country, updateFields }: Props) => {
   return (
     <FormWrapper title='Address Details'>
-      <label htmlFor='country'>Country</label>
-      <input
-        autoFocus
-        required
-        type='text'
-        id='country'
-        value={country}
-        onChange={(e) => updateFields({ country: e.target.value })}
-      />
-      <label htmlFor='street'>Street</label>
-      <input
-        required
-        type='text'
-        id='street'
-        value={street}
-        onChange={(e) => updateFields({ street: e.target.value })}
-      />
-      <label htmlFor='city'>City</label>
-      <input
-        required
-        type='text'
-        id='city'
-        value={city}
-        onChange={(e) => updateFields({ city: e.target.value })}
-      />
+      <fieldset>
+        <label htmlFor='country'>Country</label>
+        <input
+          autoFocus
+          required
+          type='text'
+          id='country'
+          value={country}
+          onChange={(e) => updateFields({ country: e.target.value })}
+          placeholder='e.g: Estonia'
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor='street'>Street</label>
+        <input
+          required
+          type='text'
+          id='street'
+          value={street}
+          onChange={(e) => updateFields({ street: e.target.value })}
+          placeholder='e.g: Street 1'
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor='city'>City</label>
+        <input
+          required
+          type='text'
+          id='city'
+          value={city}
+          onChange={(e) => updateFields({ city: e.target.value })}
+          placeholder='e.g: Tallinn'
+        />
+      </fieldset>
     </FormWrapper>
   )
 }

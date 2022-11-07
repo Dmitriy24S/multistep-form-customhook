@@ -14,31 +14,40 @@ type Props = UserFormData & {
 const UserForm = ({ firstName, lastName, age, updateFields }: Props) => {
   return (
     <FormWrapper title='User Details'>
-      <label htmlFor='firstName'>First Name</label>
-      <input
-        autoFocus
-        required
-        type='text'
-        id='firstName'
-        value={firstName}
-        onChange={(e) => updateFields({ firstName: e.target.value })}
-      />
-      <label htmlFor='lastName'>Last Name</label>
-      <input
-        required
-        type='text'
-        id='lastName'
-        value={lastName}
-        onChange={(e) => updateFields({ lastName: e.target.value })}
-      />
-      <label htmlFor='age'>Age</label>
-      <input
-        required
-        type='number'
-        id='age'
-        value={age}
-        onChange={(e) => updateFields({ age: e.target.value })}
-      />
+      <fieldset>
+        <label htmlFor='firstName'>First Name</label>
+        <input
+          autoFocus
+          required
+          type='text'
+          id='firstName'
+          value={firstName}
+          onChange={(e) => updateFields({ firstName: e.target.value })}
+          placeholder='e.g: John'
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor='lastName'>Last Name</label>
+        <input
+          required
+          type='text'
+          id='lastName'
+          value={lastName}
+          onChange={(e) => updateFields({ lastName: e.target.value })}
+          placeholder='e.g: Doe'
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor='age'>Age</label>
+        <input
+          required
+          type='number'
+          id='age'
+          value={age}
+          onChange={(e) => updateFields({ age: e.target.value })}
+          placeholder='e.g: 25'
+        />
+      </fieldset>
     </FormWrapper>
   )
 }

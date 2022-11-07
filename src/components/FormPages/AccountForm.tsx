@@ -13,25 +13,31 @@ type Props = AccountData & {
 const AccountForm = ({ email, password, updateFields }: Props) => {
   return (
     <FormWrapper title='Account Creation'>
-      <label htmlFor='email'>Email</label>
-      <input
-        autoFocus
-        required
-        type='email'
-        name='email'
-        id='email'
-        value={email}
-        onChange={(e) => updateFields({ email: e.target.value })}
-      />
-      <label htmlFor='password'>Password</label>
-      <input
-        required
-        type='password'
-        name='passowrd'
-        id='password'
-        value={password}
-        onChange={(e) => updateFields({ password: e.target.value })}
-      />
+      <fieldset>
+        <label htmlFor='email'>Email</label>
+        <input
+          autoFocus
+          required
+          type='email'
+          name='email'
+          id='email'
+          value={email}
+          onChange={(e) => updateFields({ email: e.target.value })}
+          placeholder='name@email.com'
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor='password'>Password</label>
+        <input
+          required
+          type='password'
+          name='passowrd'
+          id='password'
+          value={password}
+          onChange={(e) => updateFields({ password: e.target.value })}
+          placeholder='Enter password'
+        />
+      </fieldset>
     </FormWrapper>
   )
 }

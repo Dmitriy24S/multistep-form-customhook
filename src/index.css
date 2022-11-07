@@ -4,9 +4,13 @@
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
+
+  background: linear-gradient(30deg, red, blue);
+  background-size: 300% 300%;
+  color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,6 +20,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -23,6 +31,24 @@ a {
 }
 a:hover {
   color: #535bf2;
+}
+
+input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgb(101 62 153);
+  border-radius: 7px;
+  outline: none;
+  width: 100%; /* prevents mobile horizontal scroll? */
+}
+input::placeholder {
+  color: rgb(137, 96, 190);
+}
+input:focus-visible {
+  border: 2px solid #646cff;
 }
 
 body {
@@ -45,7 +71,9 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgb(97 56 153);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,10 +82,11 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+  border: 2px solid #646cff;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -68,4 +97,61 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+/* ==================
+      Form
+===================== */
+
+.form {
+  position: relative;
+  max-width: 26rem;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(12 0 42 / 45%);
+  box-shadow: 0px 0px 20px 0px rgb(255 255 255 / 20%);
+}
+
+.form-page-indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.8rem;
+}
+
+.form-title {
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.form-inputs label {
+  margin-bottom: 0.5rem;
+  color: #efe6fb;
+}
+
+.form-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: auto;
+}
+.form-controls button {
+  width: 5rem;
+  /* prevent button width jump 'Next' / 'Finish' */
 }

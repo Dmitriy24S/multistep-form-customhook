@@ -8,7 +8,7 @@ type Props = {
 const FormWrapper = ({ title, children }: Props) => {
   return (
     <>
-      <h2>{title}</h2>
+      <h2 className='form-title'>{title}</h2>
       <div className='form-inputs'>{children}</div>
     </>
   )
